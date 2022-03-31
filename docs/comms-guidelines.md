@@ -1,6 +1,6 @@
 ### Enforcing to the code of conduct
 
-Our [CODE OF CONDUCT](templates/code-of-conduct.md) outlines the behavior we expect from our community. Maintainers are responsible for enforcing violations they witness, or those that have been reported to jacobasper191@gmail.com.
+Our [CODE OF CONDUCT](https://github.com/20jasper/100Devs-Statistics-Project/blob/main/CODE_OF_CONDUCT.md) outlines the behavior we expect from our community. Maintainers are responsible for enforcing violations they witness, or those that have been reported to jacobasper191@gmail.com.
 
 Violations are not tolerated, but there are always some gray areas.
 
