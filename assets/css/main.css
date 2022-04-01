@@ -3350,3 +3350,15 @@ input, select, textarea {
 .contTiles h2 {
 	margin: 0 0 0.5em 0;
 }
+@media screen and (max-width: 736px) {
+	.contTiles {
+		grid-template-columns: 1fr 1fr;
+		gap: 25px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.contTiles {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+}
