@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
 
 /*
-	Phantom by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 html, body, div, span, applet, object,
@@ -2563,6 +2563,11 @@ input, select, textarea {
 
 /* Tiles */
 
+ 	.tiles > article  *{
+		color: black;
+		font-weight: 700;
+ 	}
+
 	.tiles {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -2572,30 +2577,33 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		postiion: relative;
+		postion: relative;
 		margin: -2.5em 0 0 -2.5em;
 	}
 
 		.tiles article {
-			-moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
+			/* -moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
 			-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
 			-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
-			transition: transform 0.5s ease, opacity 0.5s ease;
+			transition: transform 0.5s ease, opacity 0.5s ease; */
 			position: relative;
-			width: calc(33.33333% - 2.5em);
+			width: 100%;
+			height: 50%;
 			margin: 2.5em 0 0 2.5em;
 		}
 
 			.tiles article > .image {
-				-moz-transition: -moz-transform 0.5s ease;
+				/* -moz-transition: -moz-transform 0.5s ease;
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
-				transition: transform 0.5s ease;
+				transition: transform 0.5s ease; */
 				position: relative;
 				display: block;
 				width: 100%;
+				height: 100%;
 				border-radius: 4px;
 				overflow: hidden;
+				object-fit: fill;
 			}
 
 				.tiles article > .image img {
@@ -2605,10 +2613,10 @@ input, select, textarea {
 
 				.tiles article > .image:before {
 					pointer-events: none;
-					-moz-transition: background-color 0.5s ease, opacity 0.5s ease;
+					/* -moz-transition: background-color 0.5s ease, opacity 0.5s ease;
 					-webkit-transition: background-color 0.5s ease, opacity 0.5s ease;
 					-ms-transition: background-color 0.5s ease, opacity 0.5s ease;
-					transition: background-color 0.5s ease, opacity 0.5s ease;
+					transition: background-color 0.5s ease, opacity 0.5s ease; */
 					content: '';
 					display: block;
 					position: absolute;
@@ -2623,10 +2631,10 @@ input, select, textarea {
 
 				.tiles article > .image:after {
 					pointer-events: none;
-					-moz-transition: opacity 0.5s ease;
+					/* -moz-transition: opacity 0.5s ease;
 					-webkit-transition: opacity 0.5s ease;
 					-ms-transition: opacity 0.5s ease;
-					transition: opacity 0.5s ease;
+					transition: opacity 0.5s ease; */
 					content: '';
 					display: block;
 					position: absolute;
@@ -2634,7 +2642,7 @@ input, select, textarea {
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 0.25px%3B stroke: %23ffffff%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='100' y2='100' /%3E%3Cline x1='100' y1='0' x2='0' y2='100' /%3E%3C/svg%3E");
+					/* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 0.25px%3B stroke: %23ffffff%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='100' y2='100' /%3E%3Cline x1='100' y1='0' x2='0' y2='100' /%3E%3C/svg%3E"); */
 					background-position: center;
 					background-repeat: no-repeat;
 					background-size: 100% 100%;
@@ -2659,10 +2667,10 @@ input, select, textarea {
 				-webkit-justify-content: center;
 				-ms-justify-content: center;
 				justify-content: center;
-				-moz-transition: background-color 0.5s ease, -moz-transform 0.5s ease;
+				/* -moz-transition: background-color 0.5s ease, -moz-transform 0.5s ease;
 				-webkit-transition: background-color 0.5s ease, -webkit-transform 0.5s ease;
 				-ms-transition: background-color 0.5s ease, -ms-transform 0.5s ease;
-				transition: background-color 0.5s ease, transform 0.5s ease;
+				transition: background-color 0.5s ease, transform 0.5s ease; */
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -2690,10 +2698,10 @@ input, select, textarea {
 				}
 
 				.tiles article > a .content {
-					-moz-transition: max-height 0.5s ease, opacity 0.5s ease;
+					/* -moz-transition: max-height 0.5s ease, opacity 0.5s ease;
 					-webkit-transition: max-height 0.5s ease, opacity 0.5s ease;
 					-ms-transition: max-height 0.5s ease, opacity 0.5s ease;
-					transition: max-height 0.5s ease, opacity 0.5s ease;
+					transition: max-height 0.5s ease, opacity 0.5s ease; */
 					width: 100%;
 					max-height: 0;
 					line-height: 1.5;
@@ -2705,7 +2713,7 @@ input, select, textarea {
 						margin-bottom: 0;
 					}
 
-			.tiles article.style1 > .image:before {
+			/* .tiles article.style1 > .image:before {
 				background-color: #f2849e;
 			}
 
@@ -2727,18 +2735,18 @@ input, select, textarea {
 
 			.tiles article.style6 > .image:before {
 				background-color: #8499e7;
-			}
+			} */
 
 			body:not(.is-touch) .tiles article:hover > .image {
-				-moz-transform: scale(1.1);
+				/* -moz-transform: scale(1.1);
 				-webkit-transform: scale(1.1);
 				-ms-transform: scale(1.1);
-				transform: scale(1.1);
+				transform: scale(1.1); */
 			}
 
 				body:not(.is-touch) .tiles article:hover > .image:before {
-					background-color: #333333;
-					opacity: 0.35;
+					/* background-color: #333333;
+					opacity: 0.35; */
 				}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
@@ -2774,7 +2782,7 @@ input, select, textarea {
 			}
 
 				.tiles article {
-					width: calc(33.33333% - 1.25em);
+					width: 100%;
 					margin: 1.25em 0 0 1.25em;
 				}
 
@@ -2787,7 +2795,7 @@ input, select, textarea {
 			}
 
 				.tiles article {
-					width: calc(50% - 2.5em);
+					width: 100%;
 					margin: 2.5em 0 0 2.5em;
 				}
 
@@ -2800,7 +2808,7 @@ input, select, textarea {
 			}
 
 				.tiles article {
-					width: calc(50% - 1.25em);
+					width: 100%;
 					margin: 1.25em 0 0 1.25em;
 				}
 
