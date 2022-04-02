@@ -166,6 +166,10 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
+	p.bio {
+		margin: 0 0 .5em 0;
+	}
+
 	h1 {
 		font-size: 2.75em;
 		font-weight: 700;
