@@ -170,7 +170,7 @@ input, select, textarea {
 
 	.bio p {
 		margin: 0 0 .5em 0;
-		height: 5em;
+		height: 3.75em;
 	}
 
 	.bio span a.icon {
@@ -179,18 +179,21 @@ input, select, textarea {
 	}
 
 	@media screen and (max-width: 980px) {
+
 		.bio span a.icon {
 			font-size: 1.5em;
 		}
 	}
 
 	@media screen and (max-width: 480px) {
+
 		.bio p {
 			height: auto;
 		}
 
 		.bio span a.icon {
 			font-size: 1.8em;
+			padding: 0 0.2em;
 		}
 
 	}
