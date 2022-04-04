@@ -166,6 +166,40 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
+	/* Contributors bio section */
+
+	.bio p {
+		margin: 0 0 .5em 0;
+		height: 3.75em;
+	}
+
+	.bio span a.icon {
+		font-size: 1.15em;
+		padding: 0 0.1em;
+	}
+
+	@media screen and (max-width: 980px) {
+
+		.bio span a.icon {
+			font-size: 1.5em;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.bio p {
+			height: auto;
+		}
+
+		.bio span a.icon {
+			font-size: 1.8em;
+			padding: 0 0.2em;
+		}
+
+	}
+
+	/* Contributors bio section end */
+
 	h1 {
 		font-size: 2.75em;
 		font-weight: 700;
@@ -177,6 +211,7 @@ input, select, textarea {
 		h1 a {
 			color: inherit;
 		}
+		
 
 		@media screen and (max-width: 736px) {
 
@@ -3335,3 +3370,30 @@ input, select, textarea {
 			}
 
 		}
+
+/* Grid Tiles */
+
+.contTiles {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 25px;
+}
+.contTiles img {
+	width: 100%;
+	border-radius: 4px;
+}
+.contTiles h2 {
+	margin: 0 0 0.5em 0;
+}
+@media screen and (max-width: 736px) {
+	.contTiles {
+		grid-template-columns: 1fr 1fr;
+		gap: 25px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.contTiles {
+		grid-template-columns: 1fr;
+		gap: 25px;
+	}
+}
