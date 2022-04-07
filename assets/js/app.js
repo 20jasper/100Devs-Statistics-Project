@@ -50,7 +50,12 @@
 // });
 
 const data = d3.json('scraping/100devs-streams-Aug-6-2020-thru-Apr-5-2022.json').then((data) => {
-    console.log(data["Sheet1"])
+    for (const property in data) {
+        const stream = data[property]
+        // remove the ' hrs' at the end of the duration and convert to number
+        stream["Duration"] = +stream["Duration"].replace(' hrs', '')
+    }
+    // console.log(data)
     return data;
 });
 
