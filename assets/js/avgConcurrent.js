@@ -26,6 +26,7 @@ async function buildGraph() {
   console.log(windowWidth);
   const dataArray = await getFetch();
   const dataset = dataArray.reverse();
+
   // set graph margins
   margin = {
     top: 50,
@@ -35,33 +36,22 @@ async function buildGraph() {
   };
 
   // bar styling and size
-
   const svgWidth = windowWidth < 1200 ? windowWidth * 0.8 : 1200;
   const svgHeight = windowWidth < 1200 ? svgWidth : 960;
   const barPadding = 5;
   const barWidth = (svgWidth - margin.left - margin.right) / dataset.length;
-  console.log(dataset.length);
 
   // set svg width & height on DOM
   const svg = d3
     .select('svg')
-    // .attr('viewbox', `0 0 ${svgWidth} ${svgHeight}`);
     .attr('width', svgWidth)
     .attr('height', svgHeight);
 
-  //Formatting dates and get date extents
-  const dates = [];
-  for (let obj of dataset) {
-    dates.push(obj.date);
-  }
-  const dateExtents = d3.extent(dates);
+  //Get date extents
+  const dateExtents = getDateExtents(dataset);
 
   // Getting value extents
-  const avgCCVValues = [];
-  for (let obj of dataset) {
-    avgCCVValues.push(obj.value);
-  }
-  const valueExtents = [d3.max(avgCCVValues), 0];
+  const valueExtents = setValueExtents(dataset);
 
   // set xScale
   const xScale = d3
@@ -75,29 +65,36 @@ async function buildGraph() {
     .domain(valueExtents)
     .range([0, svgHeight - margin.top - margin.bottom]);
 
-  // Set x-axis
+  // x-axis generator
   const x_axis = d3.axisBottom(xScale);
+
+  // Change number of x-axis ticks depending on screen width
   if (windowWidth < 100) {
     x_axis.ticks(3);
   } else {
     x_axis.ticks(6);
   }
 
+  // position x axis depending on bottom margin
   const xAxisTranslate = svgHeight - margin.bottom;
+
+  // create x axis in svg
   svg
     .append('g')
-    .attr('transform', 'translate(' + margin.left + ', ' + xAxisTranslate + ')')
+    .attr('transform', `translate(${margin.left}, ${xAxisTranslate})`)
     .call(x_axis)
     .selectAll('.tick text')
     .attr('font-size', '16')
     .attr('font-family', 'Source Sans Pro')
     .attr('font-weight', '600');
 
-  // Set y-axis
+  // y-axis generator
   const y_axis = d3.axisLeft().scale(yScale);
+
+  // create x axis in svg
   svg
     .append('g')
-    .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`)
     .call(y_axis)
     .selectAll('.tick text')
     .attr('font-size', '16')
@@ -123,4 +120,24 @@ async function buildGraph() {
     })
     .attr('fill', 'steelblue');
 }
+
+// run the graph building function
 buildGraph();
+
+// Get min and max dates from dataset
+function getDateExtents(array) {
+  const dates = [];
+  for (let obj of array) {
+    dates.push(obj.date);
+  }
+  return d3.extent(dates);
+}
+
+// Set data value min and max
+function setValueExtents(array) {
+  const avgCCVValues = [];
+  for (let obj of array) {
+    avgCCVValues.push(obj.value);
+  }
+  return [d3.max(avgCCVValues), 0];
+}
