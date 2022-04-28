@@ -29,8 +29,8 @@ async function buildGraph() {
 
   // set graph margins
   margin = {
-    top: 50,
-    right: 50,
+    top: 25,
+    right: 0,
     bottom: 50,
     left: 50,
   };
@@ -38,8 +38,11 @@ async function buildGraph() {
   // bar styling and size
   const svgWidth = windowWidth < 1200 ? windowWidth * 0.8 : 1200;
   const svgHeight = windowWidth < 1200 ? svgWidth : 960;
-  const barPadding = 5;
+  let barPadding = 5;
   const barWidth = (svgWidth - margin.left - margin.right) / dataset.length;
+  if (windowWidth < 1000) {
+    barPadding = 2;
+  }
 
   // set svg width & height on DOM
   const svg = d3
@@ -69,7 +72,7 @@ async function buildGraph() {
   const x_axis = d3.axisBottom(xScale);
 
   // Change number of x-axis ticks depending on screen width
-  if (windowWidth < 100) {
+  if (windowWidth < 1000) {
     x_axis.ticks(3);
   } else {
     x_axis.ticks(6);
@@ -91,7 +94,14 @@ async function buildGraph() {
   // y-axis generator
   const y_axis = d3.axisLeft().scale(yScale);
 
-  // create x axis in svg
+  // Change number of 7-axis ticks depending on screen width
+  if (windowWidth < 1000) {
+    y_axis.ticks(4);
+  } else {
+    y_axis.ticks(8);
+  }
+
+  // create y axis in svg
   svg
     .append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`)
